@@ -16,7 +16,6 @@
                 extend: {
                     colors: {
                         koin: {
-                            // Spicy Coral - اللون الرئيسي
                             primary: '#F43F5E',
                             dark: '#111827',
                             muted: '#6B7280',
@@ -91,7 +90,7 @@
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                   </div>
                   <div>
-                    <div class="font-rounded font-extrabold text-sm text-koin-dark">Fluidité du Service</div>
+                    <div class="font-rounded font-extrabold text-sm text-koin-dark title-to-adjust">Fluidité du Service</div>
                     <div class="text-xs text-koin-dark font-semibold mt-0.5 opacity-80">Commandes sans attente</div>
                   </div>
                 </div>
@@ -101,7 +100,7 @@
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                   </div>
                   <div>
-                    <div class="font-rounded font-extrabold text-sm text-koin-dark">Upsell Intelligent</div>
+                    <div class="font-rounded font-extrabold text-sm text-koin-dark title-to-adjust">Upsell Intelligent</div>
                     <div class="text-xs text-koin-dark font-semibold mt-0.5 opacity-80">Panier moyen boosté</div>
                   </div>
                 </div>
@@ -111,7 +110,7 @@
                       <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                     <div>
-                      <div class="font-rounded font-extrabold text-sm text-koin-dark">Sérénité Équipes</div>
+                      <div class="font-rounded font-extrabold text-sm text-koin-dark title-to-adjust">Sérénité Équipes</div>
                       <div class="text-xs text-koin-dark font-semibold mt-0.5 opacity-80">Zéro erreur en cuisine</div>
                     </div>
                 </div>
@@ -123,14 +122,14 @@
 
     <section class="bg-koin-bg py-20 border-t border-koin-border mt-10">
         <div class="container mx-auto px-4 max-w-6xl">
-            <h2 class="font-rounded text-3xl font-black text-center mb-12 text-koin-dark leading-tight">Une offre claire. Zéro usine à gaz.</h2>
+            <h2 class="font-rounded text-3xl font-black text-center mb-12 text-koin-dark leading-tight title-to-adjust">Une offre claire. Zéro usine à gaz.</h2>
             
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="rounded-xl border border-koin-border bg-white text-koin-dark shadow-sm p-6 transition-all hover:shadow-md">
                     <div class="card-icon-bg w-12 h-12 rounded-lg bg-[#FFE4E6] text-[#9F1239] flex items-center justify-center mb-4 text-2xl shadow-inner">
                         🖥️
                     </div>
-                    <h3 class="font-rounded text-xl font-extrabold mb-2">Borne de Commande</h3>
+                    <h3 class="font-rounded text-xl font-extrabold mb-2 title-to-adjust">Borne de Commande</h3>
                     <p class="text-sm text-koin-muted leading-relaxed">Évitez les files d'attente. Une interface fluide qui donne faim et suggère automatiquement la boisson ou le dessert manquant.</p>
                 </div>
 
@@ -138,7 +137,7 @@
                     <div class="card-icon-bg w-12 h-12 rounded-lg bg-[#FFE4E6] text-[#9F1239] flex items-center justify-center mb-4 text-2xl shadow-inner">
                         📱
                     </div>
-                    <h3 class="font-rounded text-xl font-extrabold mb-2">Web App (QR Code)</h3>
+                    <h3 class="font-rounded text-xl font-extrabold mb-2 title-to-adjust">Web App (QR Code)</h3>
                     <p class="text-sm text-koin-muted leading-relaxed">Commande et paiement directement depuis la table. Vos serveurs courent moins, vos clients consomment plus.</p>
                 </div>
 
@@ -146,28 +145,23 @@
                     <div class="card-icon-bg w-12 h-12 rounded-lg bg-[#FFE4E6] text-[#9F1239] flex items-center justify-center mb-4 text-2xl shadow-inner">
                         🎁
                     </div>
-                    <h3 class="font-rounded text-xl font-extrabold mb-2">Fidélité Intégrée</h3>
+                    <h3 class="font-rounded text-xl font-extrabold mb-2 title-to-adjust">Fidélité Intégrée</h3>
                     <p class="text-sm text-koin-muted leading-relaxed">Récompensez vos clients réguliers sans cartes en papier compliquées. Un système simple pour les faire revenir.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Floating Customizer: Two Separate Buttons -->
-
-    <!-- COLORS Button -->
     <div id="colors-toggle" onclick="togglePanel('colors')" style="position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:10px 16px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.12);transition:transform .2s,box-shadow .2s;" onmouseenter="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(0,0,0,.18)'" onmouseleave="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,.12)'">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#F43F5E;"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
         <span style="font-size:13px;font-weight:700;color:#111827;">Couleurs</span>
     </div>
 
-    <!-- FONTS Button -->
     <div id="fonts-toggle" onclick="togglePanel('fonts')" style="position:fixed;bottom:24px;right:164px;z-index:9999;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:10px 16px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.12);transition:transform .2s,box-shadow .2s;" onmouseenter="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(0,0,0,.18)'" onmouseleave="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,.12)'">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#6366F1;"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
         <span style="font-size:13px;font-weight:700;color:#111827;">Polices</span>
     </div>
 
-    <!-- COLORS Panel -->
     <div id="colors-panel" class="customizer-panel" style="position:fixed;bottom:76px;right:24px;z-index:9998;width:260px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.18);border:1px solid #E5E7EB;padding:20px;transform:scale(0.9) translateY(10px);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .25s;">
         <div style="font-weight:800;font-size:14px;margin-bottom:14px;color:#111827;display:flex;align-items:center;gap:8px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#F43F5E;"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
@@ -180,7 +174,6 @@
         </div>
     </div>
 
-    <!-- FONTS Panel -->
     <div id="fonts-panel" class="customizer-panel" style="position:fixed;bottom:76px;right:164px;z-index:9998;width:240px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.18);border:1px solid #E5E7EB;padding:20px;transform:scale(0.9) translateY(10px);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .25s;">
         <div style="font-weight:800;font-size:14px;margin-bottom:14px;color:#111827;display:flex;align-items:center;gap:8px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#6366F1;"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
@@ -218,19 +211,16 @@
             const otherName = name === 'colors' ? 'fonts' : 'colors';
             const otherPanel = document.getElementById(otherName + '-panel');
 
-            // Close the other panel first
             otherPanel.style.opacity = '0';
             otherPanel.style.transform = 'scale(0.9) translateY(10px)';
             otherPanel.style.pointerEvents = 'none';
 
             if (openPanel === name) {
-                // Close current panel
                 panel.style.opacity = '0';
                 panel.style.transform = 'scale(0.9) translateY(10px)';
                 panel.style.pointerEvents = 'none';
                 openPanel = null;
             } else {
-                // Open panel
                 panel.style.opacity = '1';
                 panel.style.transform = 'scale(1) translateY(0)';
                 panel.style.pointerEvents = 'auto';
@@ -238,7 +228,6 @@
             }
         }
 
-        // Color map for lighter tints used by card icons
         const colorTints = {
             '#F43F5E': '#FFE4E6',
             '#10B981': '#D1FAE5',
@@ -246,39 +235,28 @@
         };
 
         function setColor(hex, lightHex) {
-            // Update Tailwind config dynamically
             tailwind.config.theme.extend.colors.koin.primary = hex;
-            // Force Tailwind CDN to re-process
-            document.querySelectorAll('[class]').forEach(el => {
-                el.className = el.className;
-            });
-
+            document.querySelectorAll('[class]').forEach(el => { el.className = el.className; });
             document.documentElement.style.setProperty('--koin-primary', hex);
 
-            // Direct DOM color updates
             document.querySelectorAll('.bg-koin-primary').forEach(el => el.style.backgroundColor = hex);
             document.querySelectorAll('.text-koin-primary').forEach(el => el.style.color = hex);
 
-            // Update card icon backgrounds (the red-tinted boxes)
             document.querySelectorAll('.card-icon-bg').forEach(el => {
                 el.style.backgroundColor = lightHex;
                 el.style.color = hex;
             });
 
-            // Update hover states on buttons
             document.querySelectorAll('button').forEach(btn => {
                 if (btn.classList.contains('bg-koin-primary') || btn.style.backgroundColor) {
-                    const origBg = getComputedStyle(btn).backgroundColor;
                     btn.onmouseenter = function() {
                         if (this.classList.contains('bg-koin-primary')) this.style.backgroundColor = hex;
                     };
                 }
             });
 
-            // Update colors toggle icon color
             document.querySelector('#colors-toggle svg').style.color = hex;
 
-            // Update active swatch
             document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
             const activeSwatch = document.querySelector(`.color-swatch[data-color="${hex}"]`);
             if (activeSwatch) activeSwatch.classList.add('active');
@@ -292,11 +270,32 @@
             document.querySelectorAll('.font-body').forEach(el => el.style.fontFamily = fontFamily);
             document.body.style.fontFamily = fontFamily;
 
+            // ==========================================
+            // التعديل السحري هنا: فرقنا بين Rubik و Outfit
+            // ==========================================
+            const heroTitle = document.querySelector('h1.font-rounded');
+            const otherTitles = document.querySelectorAll('.title-to-adjust'); 
+
+            if (fontName === 'Rubik') {
+                if (heroTitle) heroTitle.style.fontWeight = '700';
+                otherTitles.forEach(t => t.style.fontWeight = '600');
+            } 
+            else if (fontName === 'Outfit') {
+                // Outfit غليظ بزاف، هبطناه لـ 600 فالعنوان الكبير، و 500 فالصغار
+                if (heroTitle) heroTitle.style.fontWeight = '600';
+                otherTitles.forEach(t => t.style.fontWeight = '500');
+            } 
+            else {
+                // Nunito Sans كيرجع 900 (Black) و Extrabold الأصليين
+                if (heroTitle) heroTitle.style.fontWeight = '';
+                otherTitles.forEach(t => t.style.fontWeight = '');
+            }
+            // ==========================================
+
             document.querySelectorAll('.font-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         }
 
-        // Set initial active swatch
         document.querySelector('.color-swatch[data-color="#F43F5E"]').classList.add('active');
     </script>
 
