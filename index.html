@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito+Sans:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito+Sans:wght@600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -127,7 +127,7 @@
             
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="rounded-xl border border-koin-border bg-white text-koin-dark shadow-sm p-6 transition-all hover:shadow-md">
-                    <div class="w-12 h-12 rounded-lg bg-[#FFE4E6] text-[#9F1239] flex items-center justify-center mb-4 text-2xl shadow-inner">
+                    <div class="card-icon-bg w-12 h-12 rounded-lg bg-[#FFE4E6] text-[#9F1239] flex items-center justify-center mb-4 text-2xl shadow-inner">
                         🖥️
                     </div>
                     <h3 class="font-rounded text-xl font-extrabold mb-2">Borne de Commande</h3>
@@ -135,7 +135,7 @@
                 </div>
 
                 <div class="rounded-xl border border-koin-border bg-white text-koin-dark shadow-sm p-6 transition-all hover:shadow-md">
-                    <div class="w-12 h-12 rounded-lg bg-[#FFE4E6] text-[#9F1239] flex items-center justify-center mb-4 text-2xl shadow-inner">
+                    <div class="card-icon-bg w-12 h-12 rounded-lg bg-[#FFE4E6] text-[#9F1239] flex items-center justify-center mb-4 text-2xl shadow-inner">
                         📱
                     </div>
                     <h3 class="font-rounded text-xl font-extrabold mb-2">Web App (QR Code)</h3>
@@ -143,7 +143,7 @@
                 </div>
 
                 <div class="rounded-xl border border-koin-border bg-white text-koin-dark shadow-sm p-6 transition-all hover:shadow-md">
-                    <div class="w-12 h-12 rounded-lg bg-[#FFE4E6] text-[#9F1239] flex items-center justify-center mb-4 text-2xl shadow-inner">
+                    <div class="card-icon-bg w-12 h-12 rounded-lg bg-[#FFE4E6] text-[#9F1239] flex items-center justify-center mb-4 text-2xl shadow-inner">
                         🎁
                     </div>
                     <h3 class="font-rounded text-xl font-extrabold mb-2">Fidélité Intégrée</h3>
@@ -153,42 +153,57 @@
         </div>
     </section>
 
-    <!-- Floating Customizer Widget -->
-    <div id="customizer-toggle" onclick="toggleCustomizer()" style="position:fixed;bottom:24px;right:24px;z-index:9999;width:52px;height:52px;border-radius:50%;background:var(--koin-primary,#F43F5E);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .3s,background .3s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m8.66-13.5l-.87.5M4.21 16l-.87.5M20.66 16l-.87-.5M4.21 8l-.87-.5M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+    <!-- Floating Customizer: Two Separate Buttons -->
+
+    <!-- COLORS Button -->
+    <div id="colors-toggle" onclick="togglePanel('colors')" style="position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:10px 16px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.12);transition:transform .2s,box-shadow .2s;" onmouseenter="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(0,0,0,.18)'" onmouseleave="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,.12)'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#F43F5E;"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        <span style="font-size:13px;font-weight:700;color:#111827;">Couleurs</span>
     </div>
 
-    <div id="customizer-panel" style="position:fixed;bottom:90px;right:24px;z-index:9998;width:280px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.18);border:1px solid #E5E7EB;padding:20px;transform:scale(0.9);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .3s;">
-        <div style="font-weight:800;font-size:14px;margin-bottom:14px;color:#111827;">🎨 Personnaliser</div>
+    <!-- FONTS Button -->
+    <div id="fonts-toggle" onclick="togglePanel('fonts')" style="position:fixed;bottom:24px;right:164px;z-index:9999;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:10px 16px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.12);transition:transform .2s,box-shadow .2s;" onmouseenter="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(0,0,0,.18)'" onmouseleave="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,.12)'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#6366F1;"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+        <span style="font-size:13px;font-weight:700;color:#111827;">Polices</span>
+    </div>
 
-        <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:8px;">Couleur principale</div>
-        <div id="color-options" style="display:flex;gap:10px;margin-bottom:18px;">
-            <div class="color-swatch" data-color="#F43F5E" style="background:#F43F5E;" onclick="setColor('#F43F5E')" title="Coral"></div>
-            <div class="color-swatch" data-color="#3B82F6" style="background:#3B82F6;" onclick="setColor('#3B82F6')" title="Bleu"></div>
-            <div class="color-swatch" data-color="#8B5CF6" style="background:#8B5CF6;" onclick="setColor('#8B5CF6')" title="Violet"></div>
-            <div class="color-swatch" data-color="#10B981" style="background:#10B981;" onclick="setColor('#10B981')" title="Émeraude"></div>
-            <div class="color-swatch" data-color="#F59E0B" style="background:#F59E0B;" onclick="setColor('#F59E0B')" title="Ambre"></div>
+    <!-- COLORS Panel -->
+    <div id="colors-panel" class="customizer-panel" style="position:fixed;bottom:76px;right:24px;z-index:9998;width:260px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.18);border:1px solid #E5E7EB;padding:20px;transform:scale(0.9) translateY(10px);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .25s;">
+        <div style="font-weight:800;font-size:14px;margin-bottom:14px;color:#111827;display:flex;align-items:center;gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#F43F5E;"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+            Couleur principale
         </div>
+        <div id="color-options" style="display:flex;gap:12px;flex-wrap:wrap;">
+            <div class="color-swatch" data-color="#F43F5E" data-light="#FFE4E6" style="background:#F43F5E;" onclick="setColor('#F43F5E','#FFE4E6')" title="Coral"></div>
+            <div class="color-swatch" data-color="#10B981" data-light="#D1FAE5" style="background:#10B981;" onclick="setColor('#10B981','#D1FAE5')" title="Émeraude"></div>
+            <div class="color-swatch" data-color="#F59E0B" data-light="#FEF3C7" style="background:#F59E0B;" onclick="setColor('#F59E0B','#FEF3C7')" title="Ambre"></div>
+        </div>
+    </div>
 
-        <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:8px;">Police de texte</div>
+    <!-- FONTS Panel -->
+    <div id="fonts-panel" class="customizer-panel" style="position:fixed;bottom:76px;right:164px;z-index:9998;width:240px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.18);border:1px solid #E5E7EB;padding:20px;transform:scale(0.9) translateY(10px);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .25s;">
+        <div style="font-weight:800;font-size:14px;margin-bottom:14px;color:#111827;display:flex;align-items:center;gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#6366F1;"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+            Police de texte
+        </div>
         <div id="font-options" style="display:flex;flex-direction:column;gap:6px;">
             <button class="font-btn active" data-font='"Nunito Sans"' onclick="setFont(this)" style="font-family:'Nunito Sans',sans-serif;">Nunito Sans</button>
-            <button class="font-btn" data-font='Poppins' onclick="setFont(this)" style="font-family:'Poppins',sans-serif;">Poppins</button>
+            <button class="font-btn" data-font='Rubik' onclick="setFont(this)" style="font-family:'Rubik',sans-serif;">Rubik</button>
             <button class="font-btn" data-font='Outfit' onclick="setFont(this)" style="font-family:'Outfit',sans-serif;">Outfit</button>
         </div>
     </div>
 
     <style>
         .color-swatch {
-            width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+            width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
             border: 3px solid transparent; transition: transform .2s, border-color .2s;
             box-shadow: 0 2px 8px rgba(0,0,0,.15);
         }
         .color-swatch:hover { transform: scale(1.15); }
         .color-swatch.active { border-color: #111827; transform: scale(1.15); }
         .font-btn {
-            padding: 8px 12px; border-radius: 10px; border: 1px solid #E5E7EB;
-            background: #F9FAFB; font-size: 13px; font-weight: 600; color: #111827;
+            padding: 10px 14px; border-radius: 10px; border: 1px solid #E5E7EB;
+            background: #F9FAFB; font-size: 14px; font-weight: 600; color: #111827;
             cursor: pointer; text-align: left; transition: all .2s;
         }
         .font-btn:hover { background: #F3F4F6; }
@@ -196,63 +211,87 @@
     </style>
 
     <script>
-        let customizerOpen = false;
+        let openPanel = null;
 
-        function toggleCustomizer() {
-            customizerOpen = !customizerOpen;
-            const panel = document.getElementById('customizer-panel');
-            if (customizerOpen) {
-                panel.style.opacity = '1';
-                panel.style.transform = 'scale(1)';
-                panel.style.pointerEvents = 'auto';
-            } else {
+        function togglePanel(name) {
+            const panel = document.getElementById(name + '-panel');
+            const otherName = name === 'colors' ? 'fonts' : 'colors';
+            const otherPanel = document.getElementById(otherName + '-panel');
+
+            // Close the other panel first
+            otherPanel.style.opacity = '0';
+            otherPanel.style.transform = 'scale(0.9) translateY(10px)';
+            otherPanel.style.pointerEvents = 'none';
+
+            if (openPanel === name) {
+                // Close current panel
                 panel.style.opacity = '0';
-                panel.style.transform = 'scale(0.9)';
+                panel.style.transform = 'scale(0.9) translateY(10px)';
                 panel.style.pointerEvents = 'none';
+                openPanel = null;
+            } else {
+                // Open panel
+                panel.style.opacity = '1';
+                panel.style.transform = 'scale(1) translateY(0)';
+                panel.style.pointerEvents = 'auto';
+                openPanel = name;
             }
         }
 
-        function setColor(hex) {
+        // Color map for lighter tints used by card icons
+        const colorTints = {
+            '#F43F5E': '#FFE4E6',
+            '#10B981': '#D1FAE5',
+            '#F59E0B': '#FEF3C7'
+        };
+
+        function setColor(hex, lightHex) {
             // Update Tailwind config dynamically
             tailwind.config.theme.extend.colors.koin.primary = hex;
             // Force Tailwind CDN to re-process
             document.querySelectorAll('[class]').forEach(el => {
-                el.className = el.className; // trigger re-eval
+                el.className = el.className;
             });
 
-            // Also set via inline overrides for elements using bg-koin-primary, text-koin-primary
             document.documentElement.style.setProperty('--koin-primary', hex);
 
-            // Direct DOM color updates for reliability
+            // Direct DOM color updates
             document.querySelectorAll('.bg-koin-primary').forEach(el => el.style.backgroundColor = hex);
             document.querySelectorAll('.text-koin-primary').forEach(el => el.style.color = hex);
-            document.querySelectorAll('.hover\\:bg-\\[\\#E11D48\\]').forEach(el => {
-                el.onmouseenter = () => el.style.backgroundColor = hex;
+
+            // Update card icon backgrounds (the red-tinted boxes)
+            document.querySelectorAll('.card-icon-bg').forEach(el => {
+                el.style.backgroundColor = lightHex;
+                el.style.color = hex;
             });
 
-            // Update toggle button
-            document.getElementById('customizer-toggle').style.background = hex;
+            // Update hover states on buttons
+            document.querySelectorAll('button').forEach(btn => {
+                if (btn.classList.contains('bg-koin-primary') || btn.style.backgroundColor) {
+                    const origBg = getComputedStyle(btn).backgroundColor;
+                    btn.onmouseenter = function() {
+                        if (this.classList.contains('bg-koin-primary')) this.style.backgroundColor = hex;
+                    };
+                }
+            });
+
+            // Update colors toggle icon color
+            document.querySelector('#colors-toggle svg').style.color = hex;
 
             // Update active swatch
             document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
-            document.querySelector(`.color-swatch[data-color="${hex}"]`).classList.add('active');
-
-            // Update font button ring color
-            document.documentElement.style.setProperty('--koin-primary', hex);
+            const activeSwatch = document.querySelector(`.color-swatch[data-color="${hex}"]`);
+            if (activeSwatch) activeSwatch.classList.add('active');
         }
 
         function setFont(btn) {
             const fontName = btn.dataset.font;
             const fontFamily = fontName + ', sans-serif';
 
-            // Update heading font (font-rounded)
             document.querySelectorAll('.font-rounded').forEach(el => el.style.fontFamily = fontFamily);
-
-            // Update body font
             document.querySelectorAll('.font-body').forEach(el => el.style.fontFamily = fontFamily);
             document.body.style.fontFamily = fontFamily;
 
-            // Update active state
             document.querySelectorAll('.font-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         }
