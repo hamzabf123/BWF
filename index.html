@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito+Sans:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -38,7 +38,7 @@
     <nav class="sticky top-0 z-50 w-full border-b border-koin-border bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div class="container mx-auto px-4 h-16 flex items-center justify-between max-w-6xl">
             <div class="font-rounded font-black text-3xl tracking-tight text-koin-primary tracking-tight">
-                Koin
+                koin
             </div>
             
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-koin-muted">
@@ -152,6 +152,114 @@
             </div>
         </div>
     </section>
+
+    <!-- Floating Customizer Widget -->
+    <div id="customizer-toggle" onclick="toggleCustomizer()" style="position:fixed;bottom:24px;right:24px;z-index:9999;width:52px;height:52px;border-radius:50%;background:var(--koin-primary,#F43F5E);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .3s,background .3s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m8.66-13.5l-.87.5M4.21 16l-.87.5M20.66 16l-.87-.5M4.21 8l-.87-.5M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+    </div>
+
+    <div id="customizer-panel" style="position:fixed;bottom:90px;right:24px;z-index:9998;width:280px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.18);border:1px solid #E5E7EB;padding:20px;transform:scale(0.9);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .3s;">
+        <div style="font-weight:800;font-size:14px;margin-bottom:14px;color:#111827;">🎨 Personnaliser</div>
+
+        <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:8px;">Couleur principale</div>
+        <div id="color-options" style="display:flex;gap:10px;margin-bottom:18px;">
+            <div class="color-swatch" data-color="#F43F5E" style="background:#F43F5E;" onclick="setColor('#F43F5E')" title="Coral"></div>
+            <div class="color-swatch" data-color="#3B82F6" style="background:#3B82F6;" onclick="setColor('#3B82F6')" title="Bleu"></div>
+            <div class="color-swatch" data-color="#8B5CF6" style="background:#8B5CF6;" onclick="setColor('#8B5CF6')" title="Violet"></div>
+            <div class="color-swatch" data-color="#10B981" style="background:#10B981;" onclick="setColor('#10B981')" title="Émeraude"></div>
+            <div class="color-swatch" data-color="#F59E0B" style="background:#F59E0B;" onclick="setColor('#F59E0B')" title="Ambre"></div>
+        </div>
+
+        <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:8px;">Police de texte</div>
+        <div id="font-options" style="display:flex;flex-direction:column;gap:6px;">
+            <button class="font-btn active" data-font='"Nunito Sans"' onclick="setFont(this)" style="font-family:'Nunito Sans',sans-serif;">Nunito Sans</button>
+            <button class="font-btn" data-font='Poppins' onclick="setFont(this)" style="font-family:'Poppins',sans-serif;">Poppins</button>
+            <button class="font-btn" data-font='Outfit' onclick="setFont(this)" style="font-family:'Outfit',sans-serif;">Outfit</button>
+        </div>
+    </div>
+
+    <style>
+        .color-swatch {
+            width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+            border: 3px solid transparent; transition: transform .2s, border-color .2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,.15);
+        }
+        .color-swatch:hover { transform: scale(1.15); }
+        .color-swatch.active { border-color: #111827; transform: scale(1.15); }
+        .font-btn {
+            padding: 8px 12px; border-radius: 10px; border: 1px solid #E5E7EB;
+            background: #F9FAFB; font-size: 13px; font-weight: 600; color: #111827;
+            cursor: pointer; text-align: left; transition: all .2s;
+        }
+        .font-btn:hover { background: #F3F4F6; }
+        .font-btn.active { border-color: var(--koin-primary, #F43F5E); background: #FFF; box-shadow: 0 0 0 2px var(--koin-primary, #F43F5E); }
+    </style>
+
+    <script>
+        let customizerOpen = false;
+
+        function toggleCustomizer() {
+            customizerOpen = !customizerOpen;
+            const panel = document.getElementById('customizer-panel');
+            if (customizerOpen) {
+                panel.style.opacity = '1';
+                panel.style.transform = 'scale(1)';
+                panel.style.pointerEvents = 'auto';
+            } else {
+                panel.style.opacity = '0';
+                panel.style.transform = 'scale(0.9)';
+                panel.style.pointerEvents = 'none';
+            }
+        }
+
+        function setColor(hex) {
+            // Update Tailwind config dynamically
+            tailwind.config.theme.extend.colors.koin.primary = hex;
+            // Force Tailwind CDN to re-process
+            document.querySelectorAll('[class]').forEach(el => {
+                el.className = el.className; // trigger re-eval
+            });
+
+            // Also set via inline overrides for elements using bg-koin-primary, text-koin-primary
+            document.documentElement.style.setProperty('--koin-primary', hex);
+
+            // Direct DOM color updates for reliability
+            document.querySelectorAll('.bg-koin-primary').forEach(el => el.style.backgroundColor = hex);
+            document.querySelectorAll('.text-koin-primary').forEach(el => el.style.color = hex);
+            document.querySelectorAll('.hover\\:bg-\\[\\#E11D48\\]').forEach(el => {
+                el.onmouseenter = () => el.style.backgroundColor = hex;
+            });
+
+            // Update toggle button
+            document.getElementById('customizer-toggle').style.background = hex;
+
+            // Update active swatch
+            document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+            document.querySelector(`.color-swatch[data-color="${hex}"]`).classList.add('active');
+
+            // Update font button ring color
+            document.documentElement.style.setProperty('--koin-primary', hex);
+        }
+
+        function setFont(btn) {
+            const fontName = btn.dataset.font;
+            const fontFamily = fontName + ', sans-serif';
+
+            // Update heading font (font-rounded)
+            document.querySelectorAll('.font-rounded').forEach(el => el.style.fontFamily = fontFamily);
+
+            // Update body font
+            document.querySelectorAll('.font-body').forEach(el => el.style.fontFamily = fontFamily);
+            document.body.style.fontFamily = fontFamily;
+
+            // Update active state
+            document.querySelectorAll('.font-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        // Set initial active swatch
+        document.querySelector('.color-swatch[data-color="#F43F5E"]').classList.add('active');
+    </script>
 
 </body>
 </html>
